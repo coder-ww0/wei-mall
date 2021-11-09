@@ -1,7 +1,10 @@
 package com.wei.mall.model.dao;
 
 import com.wei.mall.model.pojo.User;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
