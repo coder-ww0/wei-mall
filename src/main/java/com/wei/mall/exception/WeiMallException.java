@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
  * @date 2021/11/9 18:38
  * @description: 同一异常，用来抛出异常
  */
-public class WeiMallException extends Exception {
+public class WeiMallException extends RuntimeException {
     private final Integer code;
     private final String message;
 
