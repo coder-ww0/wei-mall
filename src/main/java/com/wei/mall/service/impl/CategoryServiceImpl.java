@@ -9,6 +9,7 @@ import com.wei.mall.model.pojo.Category;
 import com.wei.mall.model.request.AddCategoryReq;
 import com.wei.mall.model.vo.CategoryVo;
 import com.wei.mall.service.CategoryService;
+import io.swagger.models.auth.In;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -83,9 +84,9 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     @Cacheable(value = "listCategoryForCustomer")
-    public List<CategoryVo> listCategoryForCustomer() {
+    public List<CategoryVo> listCategoryForCustomer(Integer parentId) {
         ArrayList<CategoryVo> categoryVoList = new ArrayList<>();
-        recursivelyFindCategories(categoryVoList, 0);
+        recursivelyFindCategories(categoryVoList,  parentId);
         return categoryVoList;
     }
 

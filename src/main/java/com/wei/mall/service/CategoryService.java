@@ -5,6 +5,7 @@ import com.wei.mall.model.pojo.Category;
 import com.wei.mall.model.request.AddCategoryReq;
 import com.wei.mall.model.request.UpdateCategoryReq;
 import com.wei.mall.model.vo.CategoryVo;
+import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
@@ -23,5 +24,5 @@ public interface CategoryService {
 
     PageInfo listForAdmin(Integer pageNum, Integer pageSize);
 
-    List<CategoryVo> listCategoryForCustomer();
+    List<CategoryVo> listCategoryForCustomer(Integer parentId);
 }
