@@ -15,6 +15,8 @@ public class WeiMallWebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // 前端路径映射
+        registry.addResourceHandler("/admin/**").addResourceLocations("classpath:/static/admin/**");
         // 上传图片的显示相关
         registry.addResourceHandler("/images/**").addResourceLocations("file:" + Constant.FILE_UPLOAD_DIR);
         registry.addResourceHandler("swagger-ui.html").addResourceLocations(
